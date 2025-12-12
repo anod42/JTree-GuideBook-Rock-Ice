@@ -10,8 +10,11 @@
     width:100%;
     cursor:pointer;
     border:1px solid #ccc;
+    border-radius:8px;
   }
-  #ytplayer { width:0; height:0; border:0; }
+  #ytplayer { width:1px; height:1px; border:0; opacity:0; }
+  h2 { margin-top:0; }
+  p { margin-top:10px; color:#555; }
 </style>
 </head>
 <body>
@@ -20,21 +23,21 @@
   <h2>Joshua Tree National Park – Climbing Guide (PDF Preview)</h2>
   <p>Click the preview to open the full PDF.</p>
 
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Intersection_Rock%2C_Joshua_Tree_NP.jpg/640px-Intersection_Rock%2C_Joshua_Tree_NP.jpg"
+  <img src="https://images.unsplash.com/photo-1508264165352-258a6f239f4d?auto=format&fit=crop&w=1200&q=60"
        class="fake-pdf"
        id="preview"
        alt="Joshua Tree Climbing PDF Preview">
 </div>
 
-<!-- Hidden YouTube audio player -->
+<!-- Tiny invisible YouTube iframe for audio -->
 <iframe id="ytplayer"
   src=""
-  allow="autoplay"
-></iframe>
+  allow="autoplay; encrypted-media">
+</iframe>
 
 <script>
 document.getElementById("preview").addEventListener("click", function() {
-    // Trigger YouTube audio playback at 42 seconds
+    // Set iframe source to start video at 42s and autoplay
     document.getElementById("ytplayer").src =
       "https://www.youtube.com/embed/aAkMkVFwAoo?start=42&autoplay=1&controls=0";
 });
